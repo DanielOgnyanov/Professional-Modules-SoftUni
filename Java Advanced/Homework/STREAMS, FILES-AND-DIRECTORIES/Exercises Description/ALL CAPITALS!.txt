@@ -1,0 +1,3 @@
+3. ALL CAPITALS!
+Write a program that reads a text file (input.txt from the Resources - Exercises) and changes the casing of all letters
+to upper. Write the output to another file (output.txt).
