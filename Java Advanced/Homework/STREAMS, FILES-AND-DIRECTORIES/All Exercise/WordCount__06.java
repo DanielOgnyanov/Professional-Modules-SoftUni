@@ -15,7 +15,7 @@ public class WordCount__06 {
         Map<String,Integer> wordsToCheck = new LinkedHashMap<>();
 
         try (BufferedReader reader = Files.newBufferedReader(Paths.get(
-                "C:\\Users\\Proprietario\\Desktop\\04. Java-Advanced-Files-and-Streams-Exercises-Resources\\Exercises Resources\\words.txt"))) {
+                "words.txt"))) {
 
             String line = reader.readLine();
 
