@@ -1,0 +1,4 @@
+6. Word Count
+Write a program that reads a list of words from the file words.txt (from the Resources - Exercises) and finds how
+many times each of the words is contained in another file text.txt (from the Resources – Exercises). Matching should
+be case-insensitive.
