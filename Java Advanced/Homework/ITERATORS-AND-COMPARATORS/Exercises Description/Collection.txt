@@ -1,0 +1,5 @@
+Collection
+
+Using the ListyIterator from the last problem, extend it by implementing the Iterable interface, implement all
+methods desired by the interface manually. Add a new method to the class PrintAll(), the method should foreach
+the collection and print all elements on a single line separated by a space.
