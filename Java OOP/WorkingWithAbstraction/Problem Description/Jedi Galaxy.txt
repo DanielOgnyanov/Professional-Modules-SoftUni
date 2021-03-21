@@ -1,0 +1,17 @@
+Jedi Galaxy
+
+Pesho is Jedi and so he starts gathering stars to grow stronger.
+His galaxy is represented as a two-dimensional array. Every cell in the matrix is a star that has a value. Ivo starts at
+the given col and row. He can move only on the diagonal from the lowest left to the upper right, and adds to his
+score all the stars (values) from the cells he passes through. Unfortunately, there is always an Evil power that tries
+to prevent his success.
+Evil power starts at the given row and col and instantly destroys all stars on the opposite diagonal – From lowest
+right to the upper left.
+Ivo adds the values only of the stars that are not destroyed by the evil power.
+You will receive two integers, separated by space, which represent the two dimensional array - the first being the
+rows and the second being the columns. Then, you must fill the two dimensional array with increasing integers
+starting from 0, and continuing on every row, like this:
+first row: 0, 1, 2… m
+second row: n+1, n+2, n+3… n + n.
+The input ends when you receive the command &quot;Let the Force be with you&quot;. When that happens, you must print the
+value of all stars that Ivo has collected successfully.
