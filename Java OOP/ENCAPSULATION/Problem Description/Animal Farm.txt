@@ -1,0 +1,10 @@
+Animal Farm
+
+
+You should be familiar with encapsulation already. For this problem, you’ll need to create class called Chicken.
+Chicken should contain several fields, a constructor, and several methods. Your task is to encapsulate or hide
+anything that is not intended to be viewed or modified from outside the class.
+Chicken lives for 15 years. Chicken have name for sure, at least 1 symbol long. Chicken producing eggs:
+ First 6 years it produces 2 eggs per day [0 - 5]
+ Next 6 years it produces 1 egg per day [6 - 11]
+ And after that it produces 0.75 eggs per day
