@@ -3,7 +3,7 @@ All-Professional-Modules
 
 
 
-  Topics covered in the Java Advanced Course:
+  Topics covered in the JAVA ADVANCED Course:
 
 
 
