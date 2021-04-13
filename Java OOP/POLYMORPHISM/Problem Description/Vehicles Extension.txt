@@ -1,0 +1,10 @@
+Vehicles Extension
+
+Use your solution of the previous task for starting point and add more functionality. Add new vehicle – Bus. Now
+every vehicle has tank capacity and fuel quantity cannot fall (set) below 0 (If fuel quantity become less than 0 print
+on the console &quot;Fuel must be a positive number&quot;).
+The vehicles cannot be filled with fuel more than their tank capacity. If you try to put more fuel in the tank than
+the available space, print on the console &quot;Cannot fit fuel in tank&quot; and do not add any fuel in vehicles tank.
+Add new command for the bus. The bus can drive with or without people. If the bus is driving with people, the air-
+conditioner is turned on and its fuel consumption per kilometer is increased with 1.4 liters. If there are no people
+in the bus when driving the air-conditioner is turned off and does not increase the fuel consumption.
