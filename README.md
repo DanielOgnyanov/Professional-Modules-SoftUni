@@ -4,9 +4,9 @@ All-Professional-Modules
 
 
 ****Topics covered in the JAVA ADVANCED Course:
-.
-.
-.
+..
+..
+..
 ---STACKS AND QUEUES
 
 ---MULTIDIMENSIONAL ARRAYS
@@ -22,13 +22,13 @@ All-Professional-Modules
 ---GENERICS
 
 ---ITERATORS AND COMPARATORS
-.
-.
-.
+..
+..
+..
 ****Topics covered in the JAVA OOP Course:
-.
-.
-.
+..
+..
+..
 ---ABSTRACTION
 
 ---ENCAPSULATION
