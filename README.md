@@ -3,7 +3,7 @@ All-Professional-Modules
 
 
 
-  Topics covered in the JAVA ADVANCED Course:
+****Topics covered in the JAVA ADVANCED Course:
 
 
 
@@ -22,3 +22,29 @@ All-Professional-Modules
 ---GENERICS
 
 ---ITERATORS AND COMPARATORS
+
+
+
+****Topics covered in the JAVA OOP Course:
+
+
+
+---ABSTRACTION
+
+---ENCAPSULATION
+
+---INHERITANCE
+
+---INTERFACES
+
+---POLYMORPHISM
+
+---SOLID
+
+---REFLECTION
+
+---UNIT TESTING
+
+---TEST DRIVEN DEVELOPMENT
+
+
