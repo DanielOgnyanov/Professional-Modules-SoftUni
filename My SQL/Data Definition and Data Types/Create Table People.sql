@@ -7,7 +7,7 @@ CREATE TABLE `people` (
 	`gender` ENUM('m', 'f') NOT NULL,
 	`birthdate` date NOT NULL,
 	`biography` LONGTEXT
-) ENGINE=InnoDB;
+) ;
 
 INSERT INTO `people`(`name`, `gender`, `birthdate`)
 	VALUES 
