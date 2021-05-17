@@ -39,7 +39,7 @@ REFERENCES `adresses`(`id`));
 
 
 
-# samo tova kachvam vuv judge 
+
 
 INSERT INTO `towns` 
 
