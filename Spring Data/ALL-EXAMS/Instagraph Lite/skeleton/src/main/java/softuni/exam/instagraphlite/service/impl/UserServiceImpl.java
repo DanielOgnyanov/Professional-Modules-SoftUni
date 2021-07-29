@@ -104,15 +104,33 @@ public class UserServiceImpl implements UserService {
     public String exportUsersWithTheirPosts() {
         StringBuilder sb = new StringBuilder();
 
-        List<Posts> allPost =
-                this.postRepository.findAll();
+        List<Users> toPrint = this.userRepository.result();
 
-        for (Posts posts : allPost) {
 
-            sb.append(String.format("%s",posts.getUsers().getUsername()))
+        for (Users users : toPrint) {
+
+            sb.append(String.format("User: %s", users.getUsername()))
                     .append(System.lineSeparator())
-                    .append(String.format("%s",posts.getCaption()))
+                    .append(String.format("Post count: %d", users.getPosts().size()))
                     .append(System.lineSeparator());
+
+            users.getPosts().forEach(p -> {
+
+                String post = p.getCaption();
+                double size = p.getPictures().getSize();
+
+                sb
+                        .append(String.format("==Post Details:"))
+                        .append(System.lineSeparator())
+                        .append(String.format("----Caption: %s", p.getCaption()))
+                        .append(System.lineSeparator())
+                        .append(String.format("----Picture Size: %.2f", p.getPictures().getSize()))
+                        .append(System.lineSeparator());
+
+
+            });
+
+
         }
         return sb.toString();
     }
