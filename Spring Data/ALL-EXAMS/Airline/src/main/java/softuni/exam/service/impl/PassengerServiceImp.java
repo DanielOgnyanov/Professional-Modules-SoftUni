@@ -102,7 +102,8 @@ public class PassengerServiceImp implements PassengerService {
         StringBuilder sb = new StringBuilder();
 
 
-        List<Passenger> toPrint = this.passengerRepository.findAll();
+        List<Passenger> toPrint = this.passengerRepository.result();
+
 
         for (Passenger curr : toPrint) {
 
@@ -112,6 +113,9 @@ public class PassengerServiceImp implements PassengerService {
                     .append(String.format("Email - %s", curr.getEmail()))
                     .append(System.lineSeparator())
                     .append(String.format("Phone - %s", curr.getPhoneNUmber()))
+                    .append(System.lineSeparator())
+                    .append(String.format("Number of tickets: %s", curr.getTicketSet().size()))
+                    .append(System.lineSeparator())
                     .append(System.lineSeparator());
 
         }
