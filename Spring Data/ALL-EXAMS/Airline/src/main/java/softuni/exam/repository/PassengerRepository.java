@@ -15,5 +15,8 @@ import java.util.Set;
 public interface PassengerRepository extends JpaRepository<Passenger, Long> {
 
     Optional<Passenger> findByEmail(String email);
+    
+    @Query("SELECT DISTINCT p FROM Passenger AS p JOIN FETCH p.ticketSet s ORDER BY size(s) DESC, p.email")
+    List<Passenger> result();
 
 }
