@@ -7,10 +7,15 @@ import javax.persistence.*;
 public class Category extends BaseEntity{
 
     private EnumCategory name;
-    private EnumCategory neededTime;
+    private int neededTime;
 
 
     public Category() {
+    }
+
+    public Category(EnumCategory name, int time) {
+        this.name = name;
+        this.neededTime = time;
     }
 
 
@@ -25,12 +30,11 @@ public class Category extends BaseEntity{
     }
 
     @Column(name = "needed_time")
-    @Enumerated(EnumType.ORDINAL)
-    public EnumCategory getNeededTime() {
+    public int getNeededTime() {
         return neededTime;
     }
 
-    public void setNeededTime(EnumCategory neededTime) {
+    public void setNeededTime(int neededTime) {
         this.neededTime = neededTime;
     }
 }
