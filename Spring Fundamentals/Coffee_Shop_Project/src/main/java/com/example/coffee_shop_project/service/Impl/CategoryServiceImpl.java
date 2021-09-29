@@ -5,4 +5,8 @@ import com.example.coffee_shop_project.service.CategoryService;
 public class CategoryServiceImpl implements CategoryService {
 
 
+    @Override
+    public void initCategories() {
+
+    }
 }
