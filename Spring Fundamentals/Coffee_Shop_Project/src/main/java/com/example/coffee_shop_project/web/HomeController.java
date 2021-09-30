@@ -1,4 +1,4 @@
-package com.example.web;
+package com.example.coffee_shop_project.web;
 
 
 import org.springframework.stereotype.Controller;
