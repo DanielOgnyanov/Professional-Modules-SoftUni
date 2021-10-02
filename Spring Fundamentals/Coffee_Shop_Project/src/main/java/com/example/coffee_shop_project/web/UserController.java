@@ -2,6 +2,7 @@ package com.example.coffee_shop_project.web;
 
 import com.example.coffee_shop_project.models.biding.UserRegisterBidingModel;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +17,12 @@ public class UserController {
 
 
     @GetMapping("/register")
-    public String register() {
+    public String register(Model model) {
+
+        if(!model.containsAttribute("userRegisterBidingModel")) {
+            model.addAttribute("userRegisterBidingModel", new UserRegisterBidingModel());
+        }
+
         return "register";
     }
 
@@ -33,6 +39,8 @@ public class UserController {
                     bindingResult);
             return "redirect:register";
         }
+
+
 
         return "redirect:/login";
     }
