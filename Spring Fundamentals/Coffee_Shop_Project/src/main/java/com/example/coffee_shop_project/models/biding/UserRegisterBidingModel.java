@@ -21,7 +21,6 @@ public class UserRegisterBidingModel {
 
 
     @Size(min = 5, max = 20 , message = "Username must be between 5 and 20 character")
-    @NonNull
     @NotBlank
     public String getUsername() {
         return username;
