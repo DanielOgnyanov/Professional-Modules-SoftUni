@@ -27,6 +27,10 @@ public class UserController {
                                   RedirectAttributes redirectAttributes) {
 
         if(bindingResult.hasErrors()) {
+            redirectAttributes.addAttribute("userRegisterBidingModel",userRegisterBidingModel);
+            redirectAttributes.addFlashAttribute
+                    ("org.springframework.validation.BidingResult.userRegisterBidingModel",
+                    bindingResult);
             return "redirect:register";
         }
 
