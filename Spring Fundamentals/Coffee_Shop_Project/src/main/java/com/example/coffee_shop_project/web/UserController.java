@@ -24,8 +24,13 @@ public class UserController {
     @PostMapping("/register")
     public String registerConfirm(@Valid UserRegisterBidingModel userRegisterBidingModel,
                                   BindingResult bindingResult,
-                                  RedirectAttributes redirectAttributes){
+                                  RedirectAttributes redirectAttributes) {
 
+        if(bindingResult.hasErrors()) {
+            return "redirect:register";
+        }
+
+        return "redirect:/login";
     }
 
 }
