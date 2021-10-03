@@ -1,6 +1,7 @@
 package com.example.coffee_shop_project.web;
 
 import com.example.coffee_shop_project.models.biding.UserRegisterBidingModel;
+import com.example.coffee_shop_project.models.entities.User;
 import com.example.coffee_shop_project.models.service.UserServiceModel;
 import com.example.coffee_shop_project.service.UserService;
 import org.modelmapper.ModelMapper;
@@ -39,19 +40,21 @@ public class UserController {
 
 
     @PostMapping("/register")
-    public String registerConfirm(@Valid UserRegisterBidingModel userRegisterBidingModel,
+    public String registerConfirm(@Valid UserRegisterBidingModel userRegistrationBindingModel,
                                   BindingResult bindingResult,
                                   RedirectAttributes redirectAttributes) {
 
-        if(bindingResult.hasErrors() || !userRegisterBidingModel.getPassword().equals(userRegisterBidingModel.getConfirmPassword())) {
+        if(bindingResult.hasErrors() || !userRegistrationBindingModel.getPassword().equals(userRegistrationBindingModel.getConfirmPassword())) {
 
-            redirectAttributes.addFlashAttribute("userRegisterBidingModel",userRegisterBidingModel);
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterBidingModel",
+            redirectAttributes.addFlashAttribute("userRegistrationBindingModel",userRegistrationBindingModel);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegistrationBindingModel",
                     bindingResult);
             return "/register";
         }
 
-        userService.register(modelMapper.map(userRegisterBidingModel, UserServiceModel.class));
+
+        userService.register(modelMapper.map(userRegistrationBindingModel, UserServiceModel.class));
+
 
         return "/login";
     }
