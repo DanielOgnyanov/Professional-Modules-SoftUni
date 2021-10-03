@@ -1,6 +1,7 @@
 package com.example.coffee_shop_project.web;
 
 import com.example.coffee_shop_project.models.biding.UserRegisterBidingModel;
+import com.example.coffee_shop_project.models.service.UserServiceModel;
 import com.example.coffee_shop_project.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
@@ -42,15 +43,15 @@ public class UserController {
                                   BindingResult bindingResult,
                                   RedirectAttributes redirectAttributes) {
 
-        if(bindingResult.hasErrors()) {
+        if(bindingResult.hasErrors() || !userRegisterBidingModel.getPassword().equals(userRegisterBidingModel.getConfirmPassword())) {
+
             redirectAttributes.addFlashAttribute("userRegisterBidingModel",userRegisterBidingModel);
-            redirectAttributes.addFlashAttribute
-                    ("org.springframework.validation.BindingResult.userRegisterBidingModel",
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterBidingModel",
                     bindingResult);
             return "/register";
         }
 
-
+        userService.register(modelMapper.map(userRegisterBidingModel, UserServiceModel.class));
 
         return "/login";
     }
