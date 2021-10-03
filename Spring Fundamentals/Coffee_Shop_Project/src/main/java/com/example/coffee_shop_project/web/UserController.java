@@ -2,6 +2,7 @@ package com.example.coffee_shop_project.web;
 
 import com.example.coffee_shop_project.models.biding.UserRegisterBidingModel;
 import com.example.coffee_shop_project.service.UserService;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,7 +17,13 @@ import javax.validation.Valid;
 @RequestMapping("/users")
 public class UserController {
 
-    private  final UserService userService;
+    private final UserService userService;
+    private final ModelMapper modelMapper;
+
+    public UserController(UserService userService, ModelMapper modelMapper) {
+        this.userService = userService;
+        this.modelMapper = modelMapper;
+    }
 
 
     @GetMapping("/register")
