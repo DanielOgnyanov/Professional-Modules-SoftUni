@@ -1,6 +1,7 @@
 package com.example.coffee_shop_project.web;
 
 import com.example.coffee_shop_project.models.biding.UserRegisterBidingModel;
+import com.example.coffee_shop_project.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,6 +16,8 @@ import javax.validation.Valid;
 @RequestMapping("/users")
 public class UserController {
 
+    private  final UserService userService;
+
 
     @GetMapping("/register")
     public String register(Model model) {
@@ -23,7 +26,7 @@ public class UserController {
             model.addAttribute("userRegisterBidingModel", new UserRegisterBidingModel());
         }
 
-        return "register";
+        return "/register";
     }
 
 
@@ -33,16 +36,16 @@ public class UserController {
                                   RedirectAttributes redirectAttributes) {
 
         if(bindingResult.hasErrors()) {
-            redirectAttributes.addAttribute("userRegisterBidingModel",userRegisterBidingModel);
+            redirectAttributes.addFlashAttribute("userRegisterBidingModel",userRegisterBidingModel);
             redirectAttributes.addFlashAttribute
-                    ("org.springframework.validation.BidingResult.userRegisterBidingModel",
+                    ("org.springframework.validation.BindingResult.userRegisterBidingModel",
                     bindingResult);
-            return "redirect:register";
+            return "/register";
         }
 
 
 
-        return "redirect:/login";
+        return "/login";
     }
 
 }
