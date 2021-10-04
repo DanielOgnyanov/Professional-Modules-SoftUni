@@ -1,5 +1,6 @@
 package com.example.coffee_shop_project.web;
 
+import com.example.coffee_shop_project.models.biding.UserLoginBindingModel;
 import com.example.coffee_shop_project.models.biding.UserRegisterBindingModel;
 import com.example.coffee_shop_project.models.service.UserServiceModel;
 import com.example.coffee_shop_project.service.UserService;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller
@@ -59,5 +61,31 @@ public class UserController {
 
 
 
+    @GetMapping("/login")
+    public String login(Model model) {
+
+        return "redirect:/";
+    }
+
+    @PostMapping("/login")
+    public String loginConfirm(@Valid UserLoginBindingModel userLoginBindingModel,
+                               BindingResult bindingResult,
+                               RedirectAttributes redirectAttributes,
+                               HttpSession httpSession) {
+
+        if(bindingResult.hasErrors())  {
+
+            redirectAttributes.addFlashAttribute("userLoginBindingModel", userLoginBindingModel);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userLoginBindingModel", bindingResult);
+
+            return "redirect:login";
+        }
+
+        return "redirect:/";
+
+
+
+
+    }
 
 }
