@@ -46,17 +46,17 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("userRegisterBindingModel", userRegisterBindingModel);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterBindingModel", bindingResult);
-            return "/register";
+            return "redirect:register";
         }
 
         if (!userRegisterBindingModel.getPassword().equals(userRegisterBindingModel.getConfirmPassword())) {
             redirectAttributes.addFlashAttribute("userRegisterBindingModel", userRegisterBindingModel);
-            return "/register";
+            return "redirect:register";
         }
 
         userService.register(modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
 
-        return "redirect:/users/login";
+        return "redirect:login";
     }
 
 
@@ -101,9 +101,6 @@ public class UserController {
         httpSession.setAttribute("user", userServiceModel);
 
         return "redirect:/";
-
-
-
 
     }
 
