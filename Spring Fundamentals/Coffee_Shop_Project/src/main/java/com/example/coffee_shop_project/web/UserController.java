@@ -81,6 +81,9 @@ public class UserController {
             return "redirect:login";
         }
 
+        UserServiceModel userServiceModel = userService
+                .findByUsernameAndPassword(userLoginBindingModel.getUsername() , userLoginBindingModel.getPassword());
+
         return "redirect:/";
 
 
