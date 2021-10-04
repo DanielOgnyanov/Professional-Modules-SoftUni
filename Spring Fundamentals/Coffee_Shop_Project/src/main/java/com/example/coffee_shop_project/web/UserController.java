@@ -68,7 +68,7 @@ public class UserController {
             model.addAttribute("userLoginBindingModel", new UserLoginBindingModel());
             model.addAttribute("notFound", false);
         }
-        return "redirect:/";
+        return "login";
     }
 
     @PostMapping("/login")
