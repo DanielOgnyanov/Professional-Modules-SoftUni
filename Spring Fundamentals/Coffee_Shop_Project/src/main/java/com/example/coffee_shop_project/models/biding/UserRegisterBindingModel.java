@@ -30,18 +30,17 @@ public class UserRegisterBindingModel {
         this.username = username;
     }
 
-    @NotBlank
+
     public String getFirstName() {
         return firstName;
     }
+
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
     @Size(min = 5, max = 20 , message = "Lastname must be between 5 and 20 character")
-
-    @NotBlank
     public String getLastName() {
         return lastName;
     }
@@ -60,8 +59,6 @@ public class UserRegisterBindingModel {
     }
 
     @Size(min = 3, message = "Password size must be atleast 3 character")
-
-    @NotBlank
     public String getPassword() {
         return password;
     }
@@ -71,8 +68,6 @@ public class UserRegisterBindingModel {
     }
 
     @Size(min = 3, message = "Password size must be atleast 3 character")
-
-    @NotBlank
     public String getConfirmPassword() {
         return confirmPassword;
     }
