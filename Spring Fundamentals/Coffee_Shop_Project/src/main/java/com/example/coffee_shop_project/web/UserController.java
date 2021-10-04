@@ -98,6 +98,8 @@ public class UserController {
             return "redirect:login";
         }
 
+        httpSession.setAttribute("user", userServiceModel);
+
         return "redirect:/";
 
 
