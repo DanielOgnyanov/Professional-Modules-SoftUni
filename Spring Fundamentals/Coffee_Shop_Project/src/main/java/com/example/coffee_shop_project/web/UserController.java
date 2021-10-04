@@ -64,6 +64,10 @@ public class UserController {
     @GetMapping("/login")
     public String login(Model model) {
 
+        if(!model.containsAttribute("userLoginBindingModel")) {
+            model.addAttribute("userLoginBindingModel", new UserLoginBindingModel());
+            model.addAttribute("notFound", false);
+        }
         return "redirect:/";
     }
 
@@ -84,6 +88,15 @@ public class UserController {
         UserServiceModel userServiceModel = userService
                 .findByUsernameAndPassword
                         (userLoginBindingModel.getUsername() , userLoginBindingModel.getPassword());
+
+
+        if(userServiceModel == null) {
+            redirectAttributes.addFlashAttribute("userLoginBindingModel", userLoginBindingModel);
+            redirectAttributes.addFlashAttribute("notFound", true);
+
+
+            return "redirect:login";
+        }
 
         return "redirect:/";
 
