@@ -18,7 +18,7 @@
         <div class="container bg-blur rounded p-5 mt-5 w-75">
 
 
-            <form th:object="${userRegisterBidingModel}" action="/users/register" method="POST"
+            <form th:action="@{/users/register}" method="POST" th:object="${userRegisterBindingModel}"
                   class=" text-center text-light">
                 <div class="form-group row">
                     <label for="username" class="col-sm-2 col-form-label">Username</label>
@@ -113,7 +113,7 @@
 
                     </div>
                 </div>
-                <button type="submit" class="btn btn-info w-50">Register</button>
+                <button class="btn btn-info w-50" type="submit" value = "submit" >Register</button>
             </form>
             <hr class="bg-light">
         </div>

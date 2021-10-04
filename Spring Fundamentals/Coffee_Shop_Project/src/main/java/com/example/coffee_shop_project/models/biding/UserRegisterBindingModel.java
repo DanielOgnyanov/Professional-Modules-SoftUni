@@ -1,12 +1,12 @@
 package com.example.coffee_shop_project.models.biding;
 
-import io.micrometer.core.lang.NonNull;
+
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-public class UserRegisterBidingModel {
+public class UserRegisterBindingModel {
 
     private String username;
     private String firstName;
@@ -16,7 +16,7 @@ public class UserRegisterBidingModel {
     private String confirmPassword;
 
 
-    public UserRegisterBidingModel() {
+    public UserRegisterBindingModel() {
     }
 
 
@@ -40,7 +40,7 @@ public class UserRegisterBidingModel {
     }
 
     @Size(min = 5, max = 20 , message = "Lastname must be between 5 and 20 character")
-    @NonNull
+
     @NotBlank
     public String getLastName() {
         return lastName;
@@ -60,7 +60,7 @@ public class UserRegisterBidingModel {
     }
 
     @Size(min = 3, message = "Password size must be atleast 3 character")
-    @NonNull
+
     @NotBlank
     public String getPassword() {
         return password;
@@ -71,7 +71,7 @@ public class UserRegisterBidingModel {
     }
 
     @Size(min = 3, message = "Password size must be atleast 3 character")
-    @NonNull
+
     @NotBlank
     public String getConfirmPassword() {
         return confirmPassword;

@@ -1,7 +1,6 @@
 package com.example.coffee_shop_project.web;
 
-import com.example.coffee_shop_project.models.biding.UserRegisterBidingModel;
-import com.example.coffee_shop_project.models.entities.User;
+import com.example.coffee_shop_project.models.biding.UserRegisterBindingModel;
 import com.example.coffee_shop_project.models.service.UserServiceModel;
 import com.example.coffee_shop_project.service.UserService;
 import org.modelmapper.ModelMapper;
@@ -31,30 +30,29 @@ public class UserController {
     @GetMapping("/register")
     public String register(Model model) {
 
-        if(!model.containsAttribute("userRegisterBidingModel")) {
-            model.addAttribute("userRegisterBidingModel", new UserRegisterBidingModel());
+        if (!model.containsAttribute("userRegisterBindingModel")) {
+            model.addAttribute("userRegisterBindingModel", new UserRegisterBindingModel());
         }
-
-        return "/register";
+        return "register";
     }
 
 
     @PostMapping("/register")
-    public String registerConfirm(@Valid UserRegisterBidingModel userRegistrationBindingModel,
+    public String registerConfirm(@Valid UserRegisterBindingModel userRegisterBindingModel,
                                   BindingResult bindingResult,
                                   RedirectAttributes redirectAttributes) {
-
-        if(bindingResult.hasErrors() || !userRegistrationBindingModel.getPassword().equals(userRegistrationBindingModel.getConfirmPassword())) {
-
-            redirectAttributes.addFlashAttribute("userRegistrationBindingModel",userRegistrationBindingModel);
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegistrationBindingModel",
-                    bindingResult);
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("userRegisterBindingModel", userRegisterBindingModel);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterBindingModel", bindingResult);
             return "/register";
         }
 
+        if (!userRegisterBindingModel.getPassword().equals(userRegisterBindingModel.getConfirmPassword())) {
+            redirectAttributes.addFlashAttribute("userRegisterBindingModel", userRegisterBindingModel);
+            return "/register";
+        }
 
-        userService.register(modelMapper.map(userRegistrationBindingModel, UserServiceModel.class));
-
+        userService.register(modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
 
         return "/login";
     }
