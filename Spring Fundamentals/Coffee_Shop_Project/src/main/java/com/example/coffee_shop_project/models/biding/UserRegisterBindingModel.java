@@ -59,6 +59,7 @@ public class UserRegisterBindingModel {
     }
 
     @Size(min = 3, message = "Password size must be atleast 3 character")
+    @NotBlank
     public String getPassword() {
         return password;
     }
@@ -68,6 +69,7 @@ public class UserRegisterBindingModel {
     }
 
     @Size(min = 3, message = "Password size must be atleast 3 character")
+    @NotBlank
     public String getConfirmPassword() {
         return confirmPassword;
     }

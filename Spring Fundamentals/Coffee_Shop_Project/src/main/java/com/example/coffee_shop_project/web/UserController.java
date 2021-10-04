@@ -54,7 +54,10 @@ public class UserController {
 
         userService.register(modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
 
-        return "/login";
+        return "redirect:/users/login";
     }
+
+
+
 
 }
