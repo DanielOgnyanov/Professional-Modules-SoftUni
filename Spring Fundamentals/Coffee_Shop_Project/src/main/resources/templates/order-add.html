@@ -44,7 +44,7 @@
                                aria-describedby="priceHelpInline">
 
 
-                        <small th:if = "${#fields.hasErrors('price')}" th:errors = "*{price}" id="priceHelpInline" class="bg-danger text-light rounded">
+                        <small th:if = "${#fields.hasErrors('price')}"  id="priceHelpInline" class="bg-danger text-light rounded">
                             Price must be positive.
                         </small>
 

@@ -40,7 +40,7 @@ public class OrderBindingModel {
         this.price = price;
     }
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd:'T'HH:mm")
+    @DateTimeFormat(pattern = "dd-MM-yyyy:'T'HH:mm")
     @PastOrPresent
     public LocalDateTime getOrderTime() {
         return orderTime;
