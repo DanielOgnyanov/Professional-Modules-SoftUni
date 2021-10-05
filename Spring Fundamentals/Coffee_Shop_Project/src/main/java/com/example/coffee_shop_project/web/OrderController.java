@@ -2,6 +2,7 @@ package com.example.coffee_shop_project.web;
 
 import com.example.coffee_shop_project.models.biding.OrderBindingModel;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,8 +16,11 @@ import javax.validation.Valid;
 public class OrderController {
 
     @GetMapping("/order-add")
-    public String add() {
+    public String add(Model model) {
 
+        if (!model.containsAttribute("orderBindingModel")) {
+            model.addAttribute("orderBindingModel", new OrderBindingModel());
+        }
         return "order-add";
     }
 
@@ -36,6 +40,10 @@ public class OrderController {
             return "redirect:/order-add";
 
         }
+
+
+
+
 
 
         return "redirect:/";
