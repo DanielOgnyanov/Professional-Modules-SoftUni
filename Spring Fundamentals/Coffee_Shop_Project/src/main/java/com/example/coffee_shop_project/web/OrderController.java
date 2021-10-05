@@ -33,9 +33,12 @@ public class OrderController {
             redirectAttributes.addFlashAttribute("orderBindingModel", orderBindingModel);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.orderBindingModel", bindingResult);
 
-
+            return "redirect:/order-add";
 
         }
+
+
+        return "redirect:/";
 
 
 
