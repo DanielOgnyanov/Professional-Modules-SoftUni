@@ -1,15 +1,16 @@
 package com.example.coffee_shop_project.web;
 
-
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/users")
-public class LoginController {
+@RequestMapping("/orders")
+public class OrderController {
 
+    @GetMapping("/order-add")
+    public String add() {
 
-
+        return "order-add";
+    }
 }
