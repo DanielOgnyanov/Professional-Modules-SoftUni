@@ -1,6 +1,8 @@
 package com.example.coffee_shop_project.web;
 
 import com.example.coffee_shop_project.models.biding.OrderBindingModel;
+import com.example.coffee_shop_project.service.OrderService;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,6 +16,15 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/orders")
 public class OrderController {
+
+    private final OrderService orderService;
+    private final ModelMapper modelMapper;
+
+    public OrderController(OrderService orderService, ModelMapper modelMapper) {
+        this.orderService = orderService;
+        this.modelMapper = modelMapper;
+    }
+
 
     @GetMapping("/order-add")
     public String add(Model model) {
