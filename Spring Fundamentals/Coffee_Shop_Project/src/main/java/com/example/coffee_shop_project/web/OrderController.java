@@ -1,6 +1,7 @@
 package com.example.coffee_shop_project.web;
 
 import com.example.coffee_shop_project.models.biding.OrderBindingModel;
+import com.example.coffee_shop_project.models.service.OrderServiceModel;
 import com.example.coffee_shop_project.service.OrderService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
@@ -53,8 +54,8 @@ public class OrderController {
         }
 
 
-
-
+        orderService
+                .add(modelMapper.map(orderBindingModel , OrderServiceModel.class));
 
 
         return "redirect:/";

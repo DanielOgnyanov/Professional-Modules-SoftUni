@@ -2,6 +2,7 @@ package com.example.coffee_shop_project.models.biding;
 
 import com.example.coffee_shop_project.models.entities.Category;
 import com.example.coffee_shop_project.models.entities.EnumCategory;
+import com.example.coffee_shop_project.models.service.OrderServiceModel;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.*;
@@ -66,4 +67,6 @@ public class OrderBindingModel {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
 }
