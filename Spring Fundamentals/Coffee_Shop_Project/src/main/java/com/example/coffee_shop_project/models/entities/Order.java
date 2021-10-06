@@ -2,6 +2,7 @@ package com.example.coffee_shop_project.models.entities;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.PastOrPresent;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -40,6 +41,7 @@ public class Order extends BaseEntity{
     }
 
     @Column(name = "order_time", nullable = false)
+    @PastOrPresent()
     public LocalDateTime getOrderTime() {
         return orderTime;
     }

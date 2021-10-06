@@ -13,7 +13,7 @@ public class OrderBindingModel {
 
     private String name;
     private BigDecimal price;
-    private LocalDateTime orderTime;
+    private String orderTime;
     private EnumCategory category;
     private String description;
 
@@ -40,13 +40,12 @@ public class OrderBindingModel {
         this.price = price;
     }
 
-    @DateTimeFormat(pattern = "dd-MM-yyyy:'T'HH:mm")
-    @PastOrPresent
-    public LocalDateTime getOrderTime() {
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+    public String getOrderTime() {
         return orderTime;
     }
 
-    public void setOrderTime(LocalDateTime orderTime) {
+    public void setOrderTime(String orderTime) {
         this.orderTime = orderTime;
     }
 
