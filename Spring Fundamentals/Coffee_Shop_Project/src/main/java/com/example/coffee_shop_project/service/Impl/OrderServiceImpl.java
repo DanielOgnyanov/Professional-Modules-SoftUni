@@ -8,6 +8,10 @@ import com.example.coffee_shop_project.service.OrderService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+
 @Service
 public class OrderServiceImpl implements OrderService {
 
@@ -27,6 +31,12 @@ public class OrderServiceImpl implements OrderService {
 
         Order order = modelMapper.map(orderServiceModel, Order.class);
 
-        order.setCategory();
+        order.setCategory(categoryService.findByName(orderServiceModel.getCategory()));
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
+        LocalDateTime localDateTime = LocalDateTime.parse(orderServiceModel.getOrderTime(), dtf);
+
+        order.setOrderTime(localDateTime);
+        orderRepository.save(order);
     }
 }

@@ -1,6 +1,7 @@
 package com.example.coffee_shop_project.models.service;
 
 import com.example.coffee_shop_project.models.entities.Category;
+import com.example.coffee_shop_project.models.entities.EnumCategory;
 import com.example.coffee_shop_project.models.entities.User;
 
 import java.math.BigDecimal;
@@ -11,8 +12,8 @@ public class OrderServiceModel {
     private Long id;
     private String name;
     private BigDecimal price;
-    private LocalDateTime orderTime;
-    private Category category;
+    private String orderTime;
+    private EnumCategory category;
     private String description;
     private User employee;
 
@@ -44,19 +45,19 @@ public class OrderServiceModel {
         this.price = price;
     }
 
-    public LocalDateTime getOrderTime() {
+    public String getOrderTime() {
         return orderTime;
     }
 
-    public void setOrderTime(LocalDateTime orderTime) {
+    public void setOrderTime(String orderTime) {
         this.orderTime = orderTime;
     }
 
-    public Category getCategory() {
+    public EnumCategory getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(EnumCategory category) {
         this.category = category;
     }
 

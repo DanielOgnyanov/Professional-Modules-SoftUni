@@ -7,6 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class OrderBindingModel {
@@ -40,6 +41,7 @@ public class OrderBindingModel {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
+
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     public String getOrderTime() {

@@ -35,7 +35,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category findByName(EnumCategory enumCategory) {
-        return categoryRepository.findByName(enumCategory);
+        return categoryRepository.findByName(enumCategory).orElse(null);
     }
 
 

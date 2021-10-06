@@ -41,7 +41,7 @@ public class Order extends BaseEntity{
     }
 
     @Column(name = "order_time", nullable = false)
-    @PastOrPresent()
+    @PastOrPresent(message = "The date cannot be in the future")
     public LocalDateTime getOrderTime() {
         return orderTime;
     }
