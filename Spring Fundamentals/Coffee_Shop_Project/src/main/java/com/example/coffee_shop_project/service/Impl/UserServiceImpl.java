@@ -1,5 +1,6 @@
 package com.example.coffee_shop_project.service.Impl;
 
+import com.example.coffee_shop_project.models.entities.EnumEmployee;
 import com.example.coffee_shop_project.models.entities.User;
 import com.example.coffee_shop_project.models.service.UserServiceModel;
 import com.example.coffee_shop_project.repository.UserRepository;
@@ -34,7 +35,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByUsername(String username) {
+    public User findByUsername(EnumEmployee username) {
         return userRepository.findByUsername(username).orElse(null);
     }
 
