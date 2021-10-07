@@ -1,5 +1,6 @@
 package com.example.coffee_shop_project.service.Impl;
 
+import com.example.coffee_shop_project.models.biding.UserLoginBindingModel;
 import com.example.coffee_shop_project.models.entities.Order;
 import com.example.coffee_shop_project.models.service.OrderServiceModel;
 import com.example.coffee_shop_project.repository.OrderRepository;
@@ -20,11 +21,18 @@ public class OrderServiceImpl implements OrderService {
     private final UserService userService;
     private final ModelMapper modelMapper;
 
-    public OrderServiceImpl(OrderRepository orderRepository, CategoryService categoryService, UserService userService, ModelMapper modelMapper) {
+
+    public OrderServiceImpl(OrderRepository orderRepository,
+                            CategoryService categoryService,
+                            UserService userService,
+                            ModelMapper modelMapper
+                            ) {
         this.orderRepository = orderRepository;
         this.categoryService = categoryService;
         this.userService = userService;
         this.modelMapper = modelMapper;
+
+
     }
 
 
@@ -42,6 +50,9 @@ public class OrderServiceImpl implements OrderService {
         order.setOrderTime(localDateTime);
 
 
+
         orderRepository.save(order);
     }
+
+
 }

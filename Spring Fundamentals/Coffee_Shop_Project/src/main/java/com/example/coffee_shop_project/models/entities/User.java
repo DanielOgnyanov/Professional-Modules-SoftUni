@@ -2,7 +2,10 @@ package com.example.coffee_shop_project.models.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -13,6 +16,7 @@ public class User extends BaseEntity{
     private String lastName;
     private String password;
     private String email;
+
 
 
     public User() {
@@ -62,4 +66,6 @@ public class User extends BaseEntity{
     public void setEmail(String email) {
         this.email = email;
     }
+
+
 }
