@@ -1,5 +1,6 @@
 package com.example.coffee_shop_project.service.Impl;
 
+import com.example.coffee_shop_project.models.entities.EnumCategory;
 import com.example.coffee_shop_project.models.entities.Order;
 import com.example.coffee_shop_project.models.service.OrderServiceModel;
 import com.example.coffee_shop_project.repository.OrderRepository;
@@ -9,8 +10,10 @@ import com.example.coffee_shop_project.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -50,6 +53,11 @@ public class OrderServiceImpl implements OrderService {
         //
 
         orderRepository.save(order);
+    }
+
+    @Override
+    public BigDecimal getAllCategory() {
+        return orderRepository.getAllCategoryFromDb();
     }
 
 

@@ -106,13 +106,6 @@ public class UserController {
     }
 
 
-    @GetMapping("/register/login")
-    public String username(HttpSession httpSession) {
 
-        String currUsername = (String) httpSession.getAttribute("username");
-        userService.findByUsername(currUsername);
-
-        return "redirect:order-add";
-    }
 
 }

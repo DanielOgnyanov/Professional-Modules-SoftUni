@@ -11,7 +11,7 @@ public interface UserService {
     UserServiceModel findByUsernameAndPassword(String username, String password);
 
 
-    Optional<User> findByUsername(String username);
+
 
 
 }
