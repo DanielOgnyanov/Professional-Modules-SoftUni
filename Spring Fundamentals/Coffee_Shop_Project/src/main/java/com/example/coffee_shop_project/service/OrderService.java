@@ -13,4 +13,6 @@ public interface OrderService {
     BigDecimal  getAllCategory();
 
     List<OrderViewModel> findAllByCatName(EnumCategory enumCategory);
+
+    void getReady(Long id);
 }
