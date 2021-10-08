@@ -1,6 +1,7 @@
 package com.example.coffee_shop_project.web;
 
 
+import com.example.coffee_shop_project.models.entities.EnumCategory;
 import com.example.coffee_shop_project.service.OrderService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,7 +27,10 @@ public class HomeController {
 
         model.addAttribute("totalTime", orderService.getAllCategory());
 
-        model.addAttribute("")
+        model.addAttribute("drinks", orderService.findAllByCatName(EnumCategory.DRINK));
+        model.addAttribute("drinks", orderService.findAllByCatName(EnumCategory.DRINK));
+        model.addAttribute("drinks", orderService.findAllByCatName(EnumCategory.DRINK));
+        model.addAttribute("drinks", orderService.findAllByCatName(EnumCategory.DRINK));
         return "home";
     }
 
