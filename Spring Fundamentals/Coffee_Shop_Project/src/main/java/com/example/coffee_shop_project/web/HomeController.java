@@ -2,6 +2,7 @@ package com.example.coffee_shop_project.web;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpSession;
@@ -10,8 +11,11 @@ import javax.servlet.http.HttpSession;
 public class HomeController {
 
     @GetMapping("/")
-    public String index(HttpSession httpSession) {
+    public String index(HttpSession httpSession, Model model) {
+        if(httpSession.getAttribute("user") == null){
+            return "index";
+        }
 
-        return httpSession.getAttribute("user") == null ? "index" : "home";
+        return "home";
     }
 }
