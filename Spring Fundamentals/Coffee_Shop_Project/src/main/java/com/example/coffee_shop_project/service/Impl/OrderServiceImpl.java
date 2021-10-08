@@ -1,7 +1,5 @@
 package com.example.coffee_shop_project.service.Impl;
 
-import com.example.coffee_shop_project.models.biding.UserLoginBindingModel;
-import com.example.coffee_shop_project.models.entities.EnumEmployee;
 import com.example.coffee_shop_project.models.entities.Order;
 import com.example.coffee_shop_project.models.service.OrderServiceModel;
 import com.example.coffee_shop_project.repository.OrderRepository;
@@ -49,8 +47,7 @@ public class OrderServiceImpl implements OrderService {
         LocalDateTime localDateTime = LocalDateTime.parse(orderServiceModel.getOrderTime(), dtf);
 
         order.setOrderTime(localDateTime);
-
-        order.setEmployee(userService.findByUsername());
+        //
 
         orderRepository.save(order);
     }

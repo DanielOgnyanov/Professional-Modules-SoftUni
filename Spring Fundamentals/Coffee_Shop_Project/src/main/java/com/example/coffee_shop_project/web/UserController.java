@@ -23,6 +23,7 @@ public class UserController {
     private final UserService userService;
     private final ModelMapper modelMapper;
 
+
     public UserController(UserService userService, ModelMapper modelMapper) {
         this.userService = userService;
         this.modelMapper = modelMapper;
@@ -102,6 +103,16 @@ public class UserController {
 
         return "redirect:/";
 
+    }
+
+
+    @GetMapping("/register/login")
+    public String username(HttpSession httpSession) {
+
+        String currUsername = (String) httpSession.getAttribute("username");
+        userService.findByUsername(currUsername);
+
+        return "redirect:order-add";
     }
 
 }
