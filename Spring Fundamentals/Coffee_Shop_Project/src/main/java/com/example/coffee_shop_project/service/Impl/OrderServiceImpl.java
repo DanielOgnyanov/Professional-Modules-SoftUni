@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -63,7 +64,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<OrderViewModel> findAllByCatName(EnumCategory enumCategory) {
-        return null;
+        return orderRepository.findAllByCategory_Name(enumCategory).stream()
+                .map(order -> modelMapper.map(order, OrderViewModel.class))
+                .collect(Collectors.toList());
     }
 
 
