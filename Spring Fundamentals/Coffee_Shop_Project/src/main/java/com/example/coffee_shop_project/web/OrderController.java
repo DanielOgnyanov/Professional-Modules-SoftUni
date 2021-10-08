@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller
@@ -29,7 +30,11 @@ public class OrderController {
 
 
     @GetMapping("/order-add")
-    public String add(Model model) {
+    public String add(Model model, HttpSession httpSession) {
+
+        if (httpSession.getAttribute("user") == null) {
+            return "redirect:/login";
+        }
 
         if (!model.containsAttribute("orderBindingModel")) {
             model.addAttribute("orderBindingModel", new OrderBindingModel());
