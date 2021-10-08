@@ -3,6 +3,7 @@ package com.example.coffee_shop_project.service.Impl;
 import com.example.coffee_shop_project.models.entities.EnumCategory;
 import com.example.coffee_shop_project.models.entities.Order;
 import com.example.coffee_shop_project.models.service.OrderServiceModel;
+import com.example.coffee_shop_project.models.view.OrderViewModel;
 import com.example.coffee_shop_project.repository.OrderRepository;
 import com.example.coffee_shop_project.service.CategoryService;
 import com.example.coffee_shop_project.service.OrderService;
@@ -58,6 +59,11 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public BigDecimal getAllCategory() {
         return orderRepository.getAllCategoryFromDb();
+    }
+
+    @Override
+    public List<OrderViewModel> findAllByCatName(EnumCategory enumCategory) {
+        return null;
     }
 
 
