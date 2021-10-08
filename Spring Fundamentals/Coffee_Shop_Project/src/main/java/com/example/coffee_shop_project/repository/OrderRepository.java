@@ -18,4 +18,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
     @Query("Select SUM(c.category.neededTime) From Order c")
     BigDecimal getAllCategoryFromDb();
+
+
+    List<Order> findAllByCategory_Name(EnumCategory enumCategory);
 }

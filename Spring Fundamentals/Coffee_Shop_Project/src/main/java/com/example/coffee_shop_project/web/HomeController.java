@@ -26,6 +26,11 @@ public class HomeController {
 
         model.addAttribute("totalTime", orderService.getAllCategory());
 
+        model.addAttribute("")
         return "home";
     }
+
+
+
+
 }
