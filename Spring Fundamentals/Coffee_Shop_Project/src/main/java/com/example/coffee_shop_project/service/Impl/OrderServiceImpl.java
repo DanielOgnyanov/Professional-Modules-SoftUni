@@ -69,5 +69,10 @@ public class OrderServiceImpl implements OrderService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public void getReady(Long id) {
+        orderRepository.deleteById(id);
+    }
+
 
 }
