@@ -28,9 +28,9 @@ public class HomeController {
         model.addAttribute("totalTime", orderService.getAllCategory());
 
         model.addAttribute("drinks", orderService.findAllByCatName(EnumCategory.DRINK));
-        model.addAttribute("drinks", orderService.findAllByCatName(EnumCategory.DRINK));
-        model.addAttribute("drinks", orderService.findAllByCatName(EnumCategory.DRINK));
-        model.addAttribute("drinks", orderService.findAllByCatName(EnumCategory.DRINK));
+        model.addAttribute("cakes", orderService.findAllByCatName(EnumCategory.CAKE));
+        model.addAttribute("coffee", orderService.findAllByCatName(EnumCategory.COFFEE));
+        model.addAttribute("others", orderService.findAllByCatName(EnumCategory.OTHER));
         return "home";
     }
 
