@@ -87,7 +87,7 @@ public class Album extends BaseEntity{
     }
 
     @Column(name = "genre")
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     public EnumGenre getGenre() {
         return genre;
     }
