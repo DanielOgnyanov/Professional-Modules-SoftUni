@@ -7,5 +7,6 @@ import javax.persistence.Table;
 @Table(name = "artists")
 public class Artist extends BaseEntity{
 
-
+    private String name;
+    private String description;
 }
