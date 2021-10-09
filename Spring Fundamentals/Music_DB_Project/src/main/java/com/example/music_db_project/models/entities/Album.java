@@ -1,8 +1,7 @@
 package com.example.music_db_project.models.entities;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -25,6 +24,8 @@ public class Album extends BaseEntity{
     public Album() {
     }
 
+
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -32,7 +33,7 @@ public class Album extends BaseEntity{
     public void setName(String name) {
         this.name = name;
     }
-
+    @Column(name = "image_url")
     public String getImageUrl() {
         return imageUrl;
     }
@@ -40,7 +41,7 @@ public class Album extends BaseEntity{
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
-
+    @Column(name = "description", columnDefinition = "TEXT", nullable = false)
     public String getDescription() {
         return description;
     }
@@ -49,6 +50,7 @@ public class Album extends BaseEntity{
         this.description = description;
     }
 
+    @Column(name = "copies")
     public int getCopies() {
         return copies;
     }
@@ -57,6 +59,7 @@ public class Album extends BaseEntity{
         this.copies = copies;
     }
 
+    @Column(name = "price")
     public BigDecimal getPrice() {
         return price;
     }
@@ -65,6 +68,7 @@ public class Album extends BaseEntity{
         this.price = price;
     }
 
+    @Column(name = "released_date")
     public LocalDate getReleasedDate() {
         return releasedDate;
     }
@@ -73,6 +77,7 @@ public class Album extends BaseEntity{
         this.releasedDate = releasedDate;
     }
 
+    @Column(name = "producer")
     public String getProducer() {
         return producer;
     }
@@ -81,6 +86,8 @@ public class Album extends BaseEntity{
         this.producer = producer;
     }
 
+    @Column(name = "genre")
+    @Enumerated(EnumType.STRING)
     public EnumGenre getGenre() {
         return genre;
     }
@@ -89,6 +96,8 @@ public class Album extends BaseEntity{
         this.genre = genre;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "artist_id", referencedColumnName = "id")
     public Artist getArtist() {
         return artist;
     }
@@ -97,6 +106,8 @@ public class Album extends BaseEntity{
         this.artist = artist;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "added_from_id", referencedColumnName = "id")
     public User getAddedFrom() {
         return addedFrom;
     }

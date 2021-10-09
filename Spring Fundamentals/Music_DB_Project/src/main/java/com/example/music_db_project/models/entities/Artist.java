@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Artist extends BaseEntity{
 
     private EnumArtist name;
-    private String description;
+    private String careerInformation;
 
     public Artist() {
     }
@@ -23,12 +23,12 @@ public class Artist extends BaseEntity{
         this.name = name;
     }
 
-    @Column(name = "description", columnDefinition = "TEXT", nullable = false)
-    public String getDescription() {
-        return description;
+    @Column(name = "career_information", columnDefinition = "TEXT", nullable = false)
+    public String getCareerInformation() {
+        return careerInformation;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCareerInformation(String description) {
+        this.careerInformation = description;
     }
 }
