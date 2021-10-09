@@ -1,7 +1,6 @@
 package com.example.music_db_project.models.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "artists")
@@ -13,6 +12,9 @@ public class Artist extends BaseEntity{
     public Artist() {
     }
 
+
+    @Column(name = "name")
+    @Enumerated(EnumType.STRING)
     public EnumArtist getName() {
         return name;
     }
@@ -21,6 +23,7 @@ public class Artist extends BaseEntity{
         this.name = name;
     }
 
+    @Column(name = "description", columnDefinition = "TEXT", nullable = false)
     public String getDescription() {
         return description;
     }
