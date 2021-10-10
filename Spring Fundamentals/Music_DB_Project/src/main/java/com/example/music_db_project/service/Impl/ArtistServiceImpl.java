@@ -27,7 +27,7 @@ public class ArtistServiceImpl implements ArtistService {
 
                         Artist artist = new Artist(artistValue, artistValue.getDescription());
 
-
+                        artistRepository.save(artist);
 
                     });
 
