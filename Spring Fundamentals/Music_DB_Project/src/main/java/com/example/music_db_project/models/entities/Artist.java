@@ -12,6 +12,10 @@ public class Artist extends BaseEntity{
     public Artist() {
     }
 
+    public Artist(EnumArtist name, String careerInformation) {
+        this.name = name;
+        this.careerInformation = careerInformation;
+    }
 
     @Column(name = "name")
     @Enumerated(EnumType.STRING)

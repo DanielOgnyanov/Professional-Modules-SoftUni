@@ -25,7 +25,7 @@ public class ArtistServiceImpl implements ArtistService {
             Arrays.stream(EnumArtist.values())
                     .forEach(artistValue ->{
 
-                        Artist artist = new Artist(artistValue.name());
+                        Artist artist = new Artist(artistValue, artistValue.getDescription());
 
 
 
