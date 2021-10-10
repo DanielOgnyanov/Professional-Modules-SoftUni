@@ -1,4 +1,19 @@
 package com.example.music_db_project.init;
 
-public class DatabaseInit {
+import com.example.music_db_project.service.ArtistService;
+import org.springframework.boot.CommandLineRunner;
+
+public class DatabaseInit implements CommandLineRunner {
+
+    private final ArtistService artistService;
+
+    public DatabaseInit(ArtistService artistService) {
+        this.artistService = artistService;
+    }
+
+
+    @Override
+    public void run(String... args) throws Exception {
+        artistService.initArtistInDb();
+    }
 }
