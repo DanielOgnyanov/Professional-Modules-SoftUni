@@ -23,7 +23,7 @@ public class Artist extends BaseEntity{
         this.name = name;
     }
 
-    @Column(name = "career_information", columnDefinition = "TEXT", nullable = false)
+    @Column(name = "career_information", columnDefinition = "TEXT")
     public String getCareerInformation() {
         return careerInformation;
     }
