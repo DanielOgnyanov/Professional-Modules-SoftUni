@@ -1,6 +1,7 @@
 package com.example.music_db_project.service.Impl;
 
 import com.example.music_db_project.models.UserServiceModel;
+import com.example.music_db_project.models.entities.User;
 import com.example.music_db_project.repository.UserRepository;
 import com.example.music_db_project.service.UserService;
 import org.modelmapper.ModelMapper;
@@ -21,7 +22,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public void register(UserServiceModel map) {
-
+    public void register(UserServiceModel userServiceModel) {
+        userRepository.save(modelMapper.map(userServiceModel, User.class));
     }
 }
