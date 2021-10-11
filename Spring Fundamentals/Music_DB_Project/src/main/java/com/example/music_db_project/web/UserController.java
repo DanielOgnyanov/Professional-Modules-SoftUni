@@ -48,5 +48,10 @@ public class UserController {
             return "redirect:register";
         }
 
+        if (!userRegisterBindingModel.getPassword().equals(userRegisterBindingModel.getConfirmPassword())) {
+            redirectAttributes.addFlashAttribute("userRegisterBindingModel", userRegisterBindingModel);
+            return "redirect:register";
+        }
+
     }
 }
