@@ -1,6 +1,7 @@
 package com.example.music_db_project.web;
 
 import com.example.music_db_project.models.UserServiceModel;
+import com.example.music_db_project.models.biding.UserLoginBindingModel;
 import com.example.music_db_project.models.biding.UserRegisterBindingModel;
 import com.example.music_db_project.service.UserService;
 import org.modelmapper.ModelMapper;
