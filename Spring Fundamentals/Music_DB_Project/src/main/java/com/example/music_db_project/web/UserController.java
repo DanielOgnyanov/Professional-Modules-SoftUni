@@ -1,5 +1,6 @@
 package com.example.music_db_project.web;
 
+import com.example.music_db_project.models.UserServiceModel;
 import com.example.music_db_project.models.biding.UserRegisterBindingModel;
 import com.example.music_db_project.service.UserService;
 import org.modelmapper.ModelMapper;
@@ -52,6 +53,8 @@ public class UserController {
             redirectAttributes.addFlashAttribute("userRegisterBindingModel", userRegisterBindingModel);
             return "redirect:register";
         }
+
+        userService.register(modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
 
     }
 }
