@@ -56,5 +56,19 @@ public class UserController {
 
         userService.register(modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
 
+        return "redirect:login";
+
+    }
+
+
+
+    @GetMapping("/login")
+    public String login(Model model) {
+
+        if(!model.containsAttribute("userLoginBindingModel")) {
+            model.addAttribute("userLoginBindingModel", new UserLoginBindingModel());
+            model.addAttribute("notFound", false);
+        }
+        return "login";
     }
 }
