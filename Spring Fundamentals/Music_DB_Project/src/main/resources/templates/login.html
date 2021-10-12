@@ -17,7 +17,12 @@
             <img alt="Metallica image" src="/img/metallica.jpg" class="w-50 rounded">
         </div>
         <div class="row g-3 align-items-center">
-            <form action="/" method="POST">
+
+
+
+            <form th:object="${userLoginBindingModel}" action="/users/login" method="POST">
+
+
                 <h5 class="text-center text-light form-text bg-danger rounded">User doesn't exists</h5>
                 <div>
                     <div class="col-auto">
