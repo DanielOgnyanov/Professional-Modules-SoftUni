@@ -37,7 +37,7 @@
                                aria-describedby="usernameHelpInline">
                     </div>
                     <div class="col-auto">
-                        <small id="usernameError" class="text-light form-text bg-danger rounded">Length must between 3
+                        <small th:if = "${#fields.hasErrors('username')}" th:errors = "*{username}" id="usernameError" class="text-light form-text bg-danger rounded">Length must between 3
                             and 20 characters</small>
                     </div>
 
