@@ -81,5 +81,17 @@ public class UserController {
                                RedirectAttributes redirectAttributes,
                                HttpSession httpSession) {
 
+
+        if(bindingResult.hasErrors())  {
+
+            redirectAttributes.addFlashAttribute("userLoginBindingModel", userLoginBindingModel);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userLoginBindingModel", bindingResult);
+
+            return "redirect:login";
+        }
+
+
+
+
     }
 }
