@@ -91,7 +91,9 @@ public class UserController {
         }
 
 
-
+        UserServiceModel userServiceModel = userService
+                .findByUsernameAndPassword
+                        (userLoginBindingModel.getUsername() , userLoginBindingModel.getPassword());
 
     }
 }
