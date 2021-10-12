@@ -95,5 +95,16 @@ public class UserController {
                 .findByUsernameAndPassword
                         (userLoginBindingModel.getUsername() , userLoginBindingModel.getPassword());
 
+
+        if(userServiceModel == null) {
+            redirectAttributes.addFlashAttribute("userLoginBindingModel", userLoginBindingModel);
+            redirectAttributes.addFlashAttribute("notFound", true);
+
+
+            return "redirect:login";
+        }
+
+
+
     }
 }
