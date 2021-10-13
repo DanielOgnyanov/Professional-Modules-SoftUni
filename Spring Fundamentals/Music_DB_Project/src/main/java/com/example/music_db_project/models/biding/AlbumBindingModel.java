@@ -2,9 +2,12 @@ package com.example.music_db_project.models.biding;
 
 import com.example.music_db_project.models.entities.EnumArtist;
 import com.example.music_db_project.models.entities.EnumGenre;
+import com.sun.istack.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -54,6 +57,7 @@ public class AlbumBindingModel {
         this.price = price;
     }
 
+    @Size(min = 10, message = "Copies must be more than 10")
     public int getCopies() {
         return copies;
     }
@@ -61,7 +65,8 @@ public class AlbumBindingModel {
     public void setCopies(int copies) {
         this.copies = copies;
     }
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+    @PastOrPresent
     public LocalDate getReleasedDate() {
         return releasedDate;
     }
@@ -78,6 +83,7 @@ public class AlbumBindingModel {
         this.producer = producer;
     }
 
+    @NotNull()
     public EnumArtist getArtist() {
         return artist;
     }
@@ -86,6 +92,7 @@ public class AlbumBindingModel {
         this.artist = artist;
     }
 
+    @NotNull()
     public EnumGenre getGenre() {
         return genre;
     }
@@ -94,6 +101,7 @@ public class AlbumBindingModel {
         this.genre = genre;
     }
 
+    @Size(min = 5, message = "Description must be min 5 characters")
     public String getDescription() {
         return description;
     }
