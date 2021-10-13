@@ -1,6 +1,7 @@
 package com.example.music_db_project.models.service;
 
 import com.example.music_db_project.models.entities.Artist;
+import com.example.music_db_project.models.entities.EnumArtist;
 import com.example.music_db_project.models.entities.EnumGenre;
 import com.example.music_db_project.models.entities.User;
 
@@ -18,7 +19,7 @@ public class AlbumServiceModel {
     private LocalDate releasedDate;
     private String producer;
     private EnumGenre genre;
-    private Artist artist;
+    private EnumArtist artist;
     private User addedFrom;
 
     public AlbumServiceModel() {
@@ -96,11 +97,11 @@ public class AlbumServiceModel {
         this.genre = genre;
     }
 
-    public Artist getArtist() {
+    public EnumArtist getArtist() {
         return artist;
     }
 
-    public void setArtist(Artist artist) {
+    public void setArtist(EnumArtist artist) {
         this.artist = artist;
     }
 
