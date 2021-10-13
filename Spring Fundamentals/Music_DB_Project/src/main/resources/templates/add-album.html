@@ -54,8 +54,8 @@
 
                 <div class="col">
                     <label for="copies">Copies</label>
-                    <input name="copies" id="copies" type="number" class="form-control" placeholder="Copies">
-                    <small id="copiesError" class="form-text bg-danger rounded">Copies must be positive</small>
+                    <input th:field="*{copies}" th:errorclass = "bg-danger" name="copies" id="copies" type="number" class="form-control" placeholder="Copies">
+                    <small th:if = "${#fields.hasErrors('copies')}" id="copiesError" class="form-text bg-danger rounded">Copies must be positive</small>
                 </div>
 
 
@@ -65,8 +65,8 @@
 
                 <div class="col">
                     <label for="releaseDate">Release date</label>
-                    <input name="releaseDate" id="releaseDate" type="date" class="form-control" placeholder="Release date">
-                    <small id="releaseDateError" class="form-text bg-danger rounded">Release date cannot be in the
+                    <input th:field="*{releasedDate}" th:errorclass = "bg-danger" name="releaseDate" id="releaseDate" type="date" class="form-control" placeholder="Release date">
+                    <small th:if = "${#fields.hasErrors('releasedDate')}" id="releaseDateError" class="form-text bg-danger rounded">Release date cannot be in the
                         future</small>
                 </div>
 
