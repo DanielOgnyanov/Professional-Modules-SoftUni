@@ -84,20 +84,29 @@
 
                 <div class="col">
                     <label for="artist">Artist</label>
-                    <select name="artist" id="artist" class="custom-select">
+
+
+                    <select th:field="*{artist}" th:errorclass = "bg-danger" name="artist" id="artist" class="custom-select">
                         <option value="" selected>Select Artist</option>
+
+                        <option th:each="c : ${T(com.example.music_db_project.models.entities.EnumArtist).values()}"
+                                th:text="${c}" th:value="${c}">Coffee</option>
                     </select>
-                    <small id="artistError" class="form-text bg-danger rounded">You must select artist</small>
+                    <small th:if = "${#fields.hasErrors('artist')}" id="artistError" class="form-text bg-danger rounded">You must select artist</small>
                 </div>
 
 
 
                 <div class="col">
                     <label for="genre">Genre</label>
-                    <select name="genre" id="genre" class="custom-select">
+
+
+                    <select th:field="*{genre}" th:errorclass = "bg-danger" name="genre" id="genre" class="custom-select">
                         <option value="" selected>Select genre</option>
+                        <option th:each="g : ${T(com.example.music_db_project.models.entities.EnumGenre).values()}"
+                                th:text="${g}" th:value="${g}">Coffee</option>
                     </select>
-                    <small id="genreError" class="form-text bg-danger rounded">You must select genre</small>
+                    <small th:if = "${#fields.hasErrors('genre')}" id="genreError" class="form-text bg-danger rounded">You must select genre</small>
                 </div>
 
 
@@ -108,8 +117,8 @@
 
 
                     <label for="description">Description</label>
-                    <textarea name="description" id="description" type="text" class="form-control" placeholder="Description"></textarea>
-                    <small id="descriptionError" class="form-text bg-danger rounded">Description length must be more than 5 characters</small>
+                    <textarea th:field="*{description}" th:errorclass = "bg-danger" name="description" id="description" type="text" class="form-control" placeholder="Description"></textarea>
+                    <small th:if = "${#fields.hasErrors('description')}" id="descriptionError" class="form-text bg-danger rounded">Description length must be more than 5 characters</small>
                 </div>
 
 
