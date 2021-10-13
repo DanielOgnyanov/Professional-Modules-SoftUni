@@ -30,6 +30,8 @@ public class AlbumServiceImpl implements AlbumService {
 
         album.setGenre(albumServiceModel.getGenre());
 
-        album.setArtist();
+        album.setArtist(artistService.findByName(album.getArtist().getName()));
+
+        albumRepository.save(album);
     }
 }
