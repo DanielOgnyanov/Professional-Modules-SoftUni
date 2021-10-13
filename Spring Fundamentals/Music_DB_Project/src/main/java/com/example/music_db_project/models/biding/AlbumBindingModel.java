@@ -3,6 +3,9 @@ package com.example.music_db_project.models.biding;
 import com.example.music_db_project.models.entities.EnumArtist;
 import com.example.music_db_project.models.entities.EnumGenre;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -23,6 +26,8 @@ public class AlbumBindingModel {
     }
 
 
+    @Size(min = 3, max = 20 , message = "Name must be between 3 and 20 characters")
+    @NotBlank
     public String getName() {
         return name;
     }
@@ -31,6 +36,7 @@ public class AlbumBindingModel {
         this.name = name;
     }
 
+    @Size(min = 5, message = "Image url must be min 5 characters")
     public String getImageUrl() {
         return imageUrl;
     }
@@ -39,6 +45,7 @@ public class AlbumBindingModel {
         this.imageUrl = imageUrl;
     }
 
+    @DecimalMin("0")
     public BigDecimal getPrice() {
         return price;
     }
