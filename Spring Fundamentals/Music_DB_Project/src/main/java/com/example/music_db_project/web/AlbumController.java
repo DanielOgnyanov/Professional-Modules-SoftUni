@@ -56,7 +56,7 @@ public class AlbumController {
 
         }
 
-
+        albumService.add(modelMapper.map());
 
 
         return "redirect:/";
