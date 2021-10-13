@@ -1,6 +1,7 @@
 package com.example.music_db_project.web;
 
 import com.example.music_db_project.models.biding.AlbumBindingModel;
+import com.example.music_db_project.models.service.AlbumServiceModel;
 import com.example.music_db_project.service.AlbumService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
@@ -56,7 +57,7 @@ public class AlbumController {
 
         }
 
-        albumService.add(modelMapper.map());
+        albumService.add(modelMapper.map(albumBindingModel, AlbumServiceModel.class));
 
 
         return "redirect:/";
