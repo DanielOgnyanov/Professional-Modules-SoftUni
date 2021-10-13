@@ -25,16 +25,16 @@
 
                 <div class="col">
                     <label for="name">Album name</label>
-                    <input name="name" id="name" type="text" class="form-control" placeholder="Album name">
-                    <small id="nameError" class="form-text bg-danger rounded">Name must be between 3 and 20
+                    <input th:field="*{name}" th:errorclass = "bg-danger" name="name" id="name" type="text" class="form-control" placeholder="Album name">
+                    <small th:if = "${#fields.hasErrors('name')}" id="nameError" class="form-text bg-danger rounded">Name must be between 3 and 20
                         characters</small>
                 </div>
 
 
                 <div class="col">
                     <label for="imgUrl">Image Url</label>
-                    <input name="imgUrl" id="imgUrl" type="text" class="form-control" placeholder="Image Url">
-                    <small id="imageUrlError" class="form-text bg-danger rounded">Image url must be more than 5
+                    <input th:field="*{imageUrl}" th:errorclass = "bg-danger" name="imgUrl" id="imgUrl" type="text" class="form-control" placeholder="Image Url">
+                    <small th:if = "${#fields.hasErrors('imageUrl')}" id="imageUrlError" class="form-text bg-danger rounded">Image url must be more than 5
                         characters</small>
                 </div>
 
@@ -46,8 +46,8 @@
 
                 <div class="col">
                     <label for="price">Price</label>
-                    <input name="price" id="price" type="number" class="form-control" placeholder="Price">
-                    <small id="priceError" class="form-text bg-danger rounded">Price must be positive</small>
+                    <input th:field="*{price}" th:errorclass = "bg-danger" name="price" id="price" type="number" class="form-control" placeholder="Price">
+                    <small th:if = "${#fields.hasErrors('price')}" id="priceError" class="form-text bg-danger rounded">Price must be positive</small>
                 </div>
 
 
