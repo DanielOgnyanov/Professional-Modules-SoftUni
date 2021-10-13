@@ -36,6 +36,6 @@ public class ArtistServiceImpl implements ArtistService {
 
     @Override
     public Artist findByName(EnumArtist enumArtist) {
-        return null;
+       return artistRepository.findByName(enumArtist).orElse(null);
     }
 }
