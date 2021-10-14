@@ -22,7 +22,7 @@
             <ul class="navbar-nav row">
 
 
-                <th:block th:if = "${}">
+                <th:block th:if = "${@currentUser.isAnonymous()}">
 
                     <li class="nav-item col-md-4">
                         <a class="nav-link text-white active h5" href="/users/login">Login</a>
@@ -34,7 +34,7 @@
                 </th:block>
 
 
-                <th:block th:if = "${session.user != null}" >
+                <th:block th:unless = "${@currentUser.isAnonymous()}" >
 
                     <li class="nav-item col-md-4">
                         <a class="nav-link text-white active h5" href="/albums/add-album">Add Album</a>
