@@ -33,4 +33,8 @@ public class CurrentUser {
     public boolean isAnonymous(){
         return this.username == null;
     }
+
+    public boolean isPresent(){
+        return this.username != null;
+    }
 }

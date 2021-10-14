@@ -34,7 +34,7 @@
                 </th:block>
 
 
-                <th:block th:unless = "${@currentUser.isAnonymous()}" >
+                <th:block th:if = "${@currentUser.isPresent()}" >
 
                     <li class="nav-item col-md-4">
                         <a class="nav-link text-white active h5" href="/albums/add-album">Add Album</a>
