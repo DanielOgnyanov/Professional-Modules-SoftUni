@@ -28,4 +28,9 @@ public class CurrentUser {
     public void setUsername(String username) {
         this.username = username;
     }
+
+
+    public boolean isAnonymous(){
+        return this.username == null;
+    }
 }
