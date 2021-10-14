@@ -1,6 +1,5 @@
 package com.example.music_db_project.web;
 
-import com.example.music_db_project.models.entities.CurrentUser;
 import com.example.music_db_project.models.service.UserServiceModel;
 import com.example.music_db_project.models.biding.UserLoginBindingModel;
 import com.example.music_db_project.models.biding.UserRegisterBindingModel;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller

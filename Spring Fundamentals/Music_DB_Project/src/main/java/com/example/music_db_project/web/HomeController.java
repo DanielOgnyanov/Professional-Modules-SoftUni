@@ -1,11 +1,9 @@
 package com.example.music_db_project.web;
 
-import com.example.music_db_project.models.entities.CurrentUser;
+import com.example.music_db_project.security.CurrentUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import javax.servlet.http.HttpSession;
 
 @Controller
 public class HomeController {

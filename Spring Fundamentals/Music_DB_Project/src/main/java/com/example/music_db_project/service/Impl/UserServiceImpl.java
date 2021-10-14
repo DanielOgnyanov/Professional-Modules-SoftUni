@@ -1,6 +1,6 @@
 package com.example.music_db_project.service.Impl;
 
-import com.example.music_db_project.models.entities.CurrentUser;
+import com.example.music_db_project.security.CurrentUser;
 import com.example.music_db_project.models.service.UserServiceModel;
 import com.example.music_db_project.models.entities.User;
 import com.example.music_db_project.repository.UserRepository;
