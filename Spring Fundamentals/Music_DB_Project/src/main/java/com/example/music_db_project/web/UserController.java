@@ -79,8 +79,8 @@ public class UserController {
     @PostMapping("/login")
     public String loginConfirm(@Valid UserLoginBindingModel userLoginBindingModel,
                                BindingResult bindingResult,
-                               RedirectAttributes redirectAttributes,
-                               HttpSession httpSession) {
+                               RedirectAttributes redirectAttributes
+                               ) {
 
 
         if(bindingResult.hasErrors())  {

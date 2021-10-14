@@ -1,6 +1,7 @@
 package com.example.music_db_project.web;
 
 import com.example.music_db_project.models.biding.AlbumBindingModel;
+import com.example.music_db_project.models.entities.CurrentUser;
 import com.example.music_db_project.models.service.AlbumServiceModel;
 import com.example.music_db_project.service.AlbumService;
 import org.modelmapper.ModelMapper;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller
@@ -21,17 +21,19 @@ public class AlbumController {
 
     private final AlbumService albumService;
     private final ModelMapper modelMapper;
+    private final CurrentUser currentUser;
 
-    public AlbumController(AlbumService albumService, ModelMapper modelMapper) {
+    public AlbumController(AlbumService albumService, ModelMapper modelMapper, CurrentUser currentUser) {
         this.albumService = albumService;
         this.modelMapper = modelMapper;
+        this.currentUser = currentUser;
     }
 
 
     @GetMapping("/add-album")
-    public String add(Model model, HttpSession httpSession) {
+    public String add(Model model) {
 
-        if (httpSession.getAttribute("user") == null) {
+        if (currentUser.isAnonymous()) {
             return "redirect:/login";
         }
 
