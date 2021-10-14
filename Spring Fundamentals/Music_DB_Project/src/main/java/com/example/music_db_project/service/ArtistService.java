@@ -7,4 +7,5 @@ public interface ArtistService {
 
     void initArtistInDb();
     Artist findByName(EnumArtist enumArtist);
+    Artist findById(Long id);
 }
