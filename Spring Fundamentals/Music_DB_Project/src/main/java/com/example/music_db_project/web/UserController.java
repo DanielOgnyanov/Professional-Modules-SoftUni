@@ -106,7 +106,8 @@ public class UserController {
         }
 
 
-        httpSession.setAttribute("user", userServiceModel);
+        // httpSession.setAttribute("user", userServiceModel);
+           userService.login(userServiceModel);
 
         return "redirect:/";
 
