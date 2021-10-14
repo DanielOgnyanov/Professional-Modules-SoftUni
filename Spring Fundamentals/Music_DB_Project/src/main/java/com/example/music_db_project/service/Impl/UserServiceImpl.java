@@ -39,5 +39,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void login(UserServiceModel userServiceModel) {
 
+        currentUser.setId(userServiceModel.getId());
+
+        currentUser.setUsername(userServiceModel.getUsername());
+
+
     }
 }
