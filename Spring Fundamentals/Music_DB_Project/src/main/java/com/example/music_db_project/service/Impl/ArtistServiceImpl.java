@@ -38,9 +38,4 @@ public class ArtistServiceImpl implements ArtistService {
     public Artist findByName(EnumArtist enumArtist) {
        return artistRepository.findByName(enumArtist).orElse(null);
     }
-
-    @Override
-    public Artist findById(Long id) {
-        return artistRepository.findById(id).orElse(null);
-    }
 }
