@@ -1,6 +1,7 @@
 package com.example.music_db_project.service.Impl;
 
 import com.example.music_db_project.models.entities.Album;
+import com.example.music_db_project.models.view.AlbumViewModel;
 import com.example.music_db_project.security.CurrentUser;
 import com.example.music_db_project.models.service.AlbumServiceModel;
 import com.example.music_db_project.repository.AlbumRepository;
@@ -9,6 +10,9 @@ import com.example.music_db_project.service.ArtistService;
 import com.example.music_db_project.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
+import java.util.List;
 
 @Service
 public class AlbumServiceImpl implements AlbumService {
@@ -41,5 +45,10 @@ public class AlbumServiceImpl implements AlbumService {
         album.setAddedFrom(userService.findById(currentUser.getId()));
 
         albumRepository.save(album);
+    }
+
+    @Override
+    public BigDecimal findAllSoldCopies() {
+        return albumRepository.allSoldCopies();
     }
 }
