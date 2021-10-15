@@ -1,6 +1,7 @@
 package com.example.music_db_project.web;
 
 import com.example.music_db_project.security.CurrentUser;
+import com.example.music_db_project.service.AlbumService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,9 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     private final CurrentUser currentUser;
+    private final AlbumService albumService;
 
-    public HomeController(CurrentUser currentUser) {
+    public HomeController(CurrentUser currentUser, AlbumService albumService) {
         this.currentUser = currentUser;
+        this.albumService = albumService;
     }
 
 
@@ -20,6 +23,8 @@ public class HomeController {
         if (currentUser.isAnonymous()) {
             return "index";
         }
+
+        model.addAttribute("totalSoldCopies", albumService.findAllSoldCopies());
         return "home";
 
 
