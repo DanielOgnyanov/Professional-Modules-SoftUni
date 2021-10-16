@@ -11,7 +11,7 @@ public interface AlbumService {
 
     BigDecimal findAllSoldCopies();
 
-    List<AlbumServiceModel> getAllOrdered();
+    List<AlbumViewModel> getAllOrdered();
 
     void deleteById(Long id);
 }

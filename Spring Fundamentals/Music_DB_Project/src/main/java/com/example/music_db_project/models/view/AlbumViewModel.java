@@ -12,14 +12,12 @@ public class AlbumViewModel {
     private Long id;
     private String name;
     private String imageUrl;
-    private String description;
     private int copies;
     private BigDecimal price;
     private LocalDate releasedDate;
-    private String producer;
     private EnumGenre genre;
     private String artistName;
-    private User addedFrom;
+
 
     public AlbumViewModel() {
     }
@@ -48,14 +46,6 @@ public class AlbumViewModel {
         this.imageUrl = imageUrl;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public int getCopies() {
         return copies;
     }
@@ -80,13 +70,6 @@ public class AlbumViewModel {
         this.releasedDate = releasedDate;
     }
 
-    public String getProducer() {
-        return producer;
-    }
-
-    public void setProducer(String producer) {
-        this.producer = producer;
-    }
 
     public EnumGenre getGenre() {
         return genre;
@@ -104,11 +87,5 @@ public class AlbumViewModel {
         this.artistName = artistName;
     }
 
-    public User getAddedFrom() {
-        return addedFrom;
-    }
 
-    public void setAddedFrom(User addedFrom) {
-        this.addedFrom = addedFrom;
-    }
 }

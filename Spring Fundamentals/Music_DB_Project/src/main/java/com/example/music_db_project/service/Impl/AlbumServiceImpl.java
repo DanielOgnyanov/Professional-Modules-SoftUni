@@ -54,9 +54,9 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     @Override
-    public List<AlbumServiceModel> getAllOrdered() {
+    public List<AlbumViewModel> getAllOrdered() {
         return albumRepository.findAllOrdered()
-                .stream().map(album -> modelMapper.map(album, AlbumServiceModel.class))
+                .stream().map(album -> modelMapper.map(album, AlbumViewModel.class))
                 .collect(Collectors.toList());
     }
 
