@@ -10,4 +10,6 @@ public interface AlbumService {
     void add(AlbumServiceModel albumServiceModel);
 
     BigDecimal findAllSoldCopies();
+
+    List<AlbumServiceModel> getAllOrdered();
 }

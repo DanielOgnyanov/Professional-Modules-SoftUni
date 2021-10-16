@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AlbumServiceImpl implements AlbumService {
@@ -50,5 +51,12 @@ public class AlbumServiceImpl implements AlbumService {
     @Override
     public BigDecimal findAllSoldCopies() {
         return albumRepository.allSoldCopies();
+    }
+
+    @Override
+    public List<AlbumServiceModel> getAllOrdered() {
+        return albumRepository.findAllOrdered()
+                .stream().map(album -> modelMapper.map(album, AlbumServiceModel.class))
+                .collect(Collectors.toList());
     }
 }
