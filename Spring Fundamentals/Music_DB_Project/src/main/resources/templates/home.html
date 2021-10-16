@@ -24,16 +24,16 @@
             <div class="card mb-4 box-shadow">
 
 
-                <img th:src="*{}" class="card-img-top" alt="Thumbnail [100%x225]"
+                <img th:src="*{imageUrl}" class="card-img-top" alt="Thumbnail [100%x225]"
                      data-holder-rendered="true"
                      style="height: 225px; width: 100%; display: block;">
                 <div class="card-body">
                     <div class="text-center">
-                        <p class="card-text border-bottom ">Name: Name of album</p>
-                        <p class="card-text border-bottom ">Artist: Metallica</p>
-                        <p class="card-text border-bottom ">Genre: Metal</p>
-                        <p class="card-text border-bottom ">Price: 19.99</p>
-                        <p class="card-text border-bottom">Release Date: </p>
+                        <p class="card-text border-bottom " th:text="|Name: *{name}|"></p>
+                        <p class="card-text border-bottom " th:text="|Artist: ${#strings.capitalize(a.getArtist().getName().toString().toLowerCase())}|"></p>
+                        <p class="card-text border-bottom " th:text="|Genre: *{genre.toString()}|"></p>
+                        <p class="card-text border-bottom " th:text="|Price: *{price}|"></p>
+                        <p class="card-text border-bottom"  th:text="|Release Date: *{releasedDate}|"></p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
