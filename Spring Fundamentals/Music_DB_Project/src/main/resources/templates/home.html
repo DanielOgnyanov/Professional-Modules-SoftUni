@@ -30,7 +30,7 @@
                 <div class="card-body">
                     <div class="text-center">
                         <p class="card-text border-bottom " th:text="|Name: *{name}|"></p>
-                        <p class="card-text border-bottom " th:text="|Artist: ${#strings.capitalize(a.getArtist().getName().toString().toLowerCase())}|"></p>
+                        <p class="card-text border-bottom " th:text="|Artist: ${a.artist.getName()}|"></p>
                         <p class="card-text border-bottom " th:text="|Genre: *{genre.toString()}|"></p>
                         <p class="card-text border-bottom " th:text="|Price: *{price}|"></p>
                         <p class="card-text border-bottom"  th:text="|Release Date: *{releasedDate}|"></p>
