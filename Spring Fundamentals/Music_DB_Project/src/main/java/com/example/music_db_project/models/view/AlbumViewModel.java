@@ -18,7 +18,7 @@ public class AlbumViewModel {
     private LocalDate releasedDate;
     private String producer;
     private EnumGenre genre;
-    private EnumArtist artistName;
+    private String artistName;
     private User addedFrom;
 
     public AlbumViewModel() {
@@ -96,11 +96,11 @@ public class AlbumViewModel {
         this.genre = genre;
     }
 
-    public EnumArtist getArtistName() {
+    public String getArtistName() {
         return artistName;
     }
 
-    public void setArtistName(EnumArtist artistName) {
+    public void setArtistName(String artistName) {
         this.artistName = artistName;
     }
 
