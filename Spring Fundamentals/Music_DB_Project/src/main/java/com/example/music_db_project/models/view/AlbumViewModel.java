@@ -10,6 +10,7 @@ public class AlbumViewModel {
 
     private Long id;
     private String name;
+    private String imageUrl;
     private int copies;
     private BigDecimal price;
     private EnumGenre genre;
