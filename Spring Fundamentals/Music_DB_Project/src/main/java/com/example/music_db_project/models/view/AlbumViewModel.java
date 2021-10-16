@@ -1,6 +1,5 @@
 package com.example.music_db_project.models.view;
 
-import com.example.music_db_project.models.entities.Artist;
 import com.example.music_db_project.models.entities.EnumArtist;
 import com.example.music_db_project.models.entities.EnumGenre;
 import com.example.music_db_project.models.entities.User;
@@ -19,7 +18,7 @@ public class AlbumViewModel {
     private LocalDate releasedDate;
     private String producer;
     private EnumGenre genre;
-    private EnumArtist artist;
+    private EnumArtist artistName;
     private User addedFrom;
 
     public AlbumViewModel() {
@@ -97,12 +96,12 @@ public class AlbumViewModel {
         this.genre = genre;
     }
 
-    public EnumArtist getArtist() {
-        return artist;
+    public EnumArtist getArtistName() {
+        return artistName;
     }
 
-    public void setArtist(EnumArtist artist) {
-        this.artist = artist;
+    public void setArtistName(EnumArtist artistName) {
+        this.artistName = artistName;
     }
 
     public User getAddedFrom() {
