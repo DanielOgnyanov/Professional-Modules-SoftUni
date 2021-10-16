@@ -59,4 +59,12 @@ public class AlbumServiceImpl implements AlbumService {
                 .stream().map(album -> modelMapper.map(album, AlbumServiceModel.class))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public void deleteById(Long id) {
+        Album album = albumRepository.findById(id).orElse(null);
+
+        albumRepository.deleteById(id);
+
+    }
 }
