@@ -7,10 +7,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Repository
 public interface AlbumRepository extends JpaRepository<Album, Long> {
 
     @Query("Select SUM(a.copies) From Album as a")
     BigDecimal allSoldCopies();
+
+    @Query("SELECT a FROM Album a ORDER BY a.copies DESC")
+    List<Album> findAllOrdered();
 }
