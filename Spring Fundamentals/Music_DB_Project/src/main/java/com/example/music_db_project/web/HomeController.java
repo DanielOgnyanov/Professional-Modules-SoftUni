@@ -31,9 +31,7 @@ public class HomeController {
         }
 
         model.addAttribute("totalSoldCopies", albumService.findAllSoldCopies());
-        model.addAttribute("albums", albumService.getAllOrdered().stream()
-                .map(a -> modelMapper
-                        .map(a, AlbumViewModel.class)).collect(Collectors.toList()));
+        model.addAttribute("albums", albumService.getAllOrdered());
         return "home";
 
 
