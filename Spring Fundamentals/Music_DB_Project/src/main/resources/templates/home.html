@@ -14,7 +14,7 @@
 
 
 <main class="p-5 align-content-center bg-blur my-main">
-    <h2 class="text-light border-bottom" th:text="|Total sold copies
+    <h2 th:if="${totalSoldCopies != null}" class="text-light border-bottom" th:text="|Total sold copies
         of all albums: ${totalSoldCopies}|"></h2>
     <div class="row">
 
