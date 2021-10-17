@@ -33,9 +33,9 @@ public class OrderController {
 
 
     @GetMapping("/order-add")
-    public String add(Model model, HttpSession httpSession) {
+    public String add(Model model) {
 
-        if (httpSession.getAttribute("user") == null) {
+        if (currentUser.isAnonymous()) {
             return "redirect:/login";
         }
 
