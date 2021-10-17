@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
 
-                <th:block th:if = "${session.user != null}" >
+                <th:block th:if = "${@currentUser.isPresent()}" >
 
                     <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
@@ -30,7 +30,7 @@
 
                 </th:block>
 
-                <th:block th:if = "${session.user == null}">
+                <th:block th:if = "${@currentUser.isAnonymous()}">
 
                     <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
