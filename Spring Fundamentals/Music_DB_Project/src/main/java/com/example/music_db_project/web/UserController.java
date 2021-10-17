@@ -3,6 +3,7 @@ package com.example.music_db_project.web;
 import com.example.music_db_project.models.service.UserServiceModel;
 import com.example.music_db_project.models.biding.UserLoginBindingModel;
 import com.example.music_db_project.models.biding.UserRegisterBindingModel;
+import com.example.music_db_project.security.CurrentUser;
 import com.example.music_db_project.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
@@ -21,11 +22,12 @@ public class UserController {
 
     private final UserService userService;
     private final ModelMapper modelMapper;
+    private final CurrentUser currentUser;
 
-
-    public UserController(UserService userService, ModelMapper modelMapper) {
+    public UserController(UserService userService, ModelMapper modelMapper, CurrentUser currentUser) {
         this.userService = userService;
         this.modelMapper = modelMapper;
+        this.currentUser = currentUser;
     }
 
 
@@ -109,5 +111,14 @@ public class UserController {
 
         return "redirect:/";
 
+    }
+
+
+    @GetMapping("/logout")
+    public String logout()  {
+        currentUser.setId(null);
+        currentUser.setUsername(null);
+
+        return "redirect:/";
     }
 }
