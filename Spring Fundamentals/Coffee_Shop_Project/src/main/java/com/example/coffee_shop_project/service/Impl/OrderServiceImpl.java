@@ -5,6 +5,7 @@ import com.example.coffee_shop_project.models.entities.Order;
 import com.example.coffee_shop_project.models.service.OrderServiceModel;
 import com.example.coffee_shop_project.models.view.OrderViewModel;
 import com.example.coffee_shop_project.repository.OrderRepository;
+import com.example.coffee_shop_project.security.CurrentUser;
 import com.example.coffee_shop_project.service.CategoryService;
 import com.example.coffee_shop_project.service.OrderService;
 import com.example.coffee_shop_project.service.UserService;
@@ -24,19 +25,21 @@ public class OrderServiceImpl implements OrderService {
     private final CategoryService categoryService;
     private final UserService userService;
     private final ModelMapper modelMapper;
+    private final CurrentUser currentUser;
 
 
     public OrderServiceImpl(OrderRepository orderRepository,
                             CategoryService categoryService,
                             UserService userService,
-                            ModelMapper modelMapper
-                            ) {
+                            ModelMapper modelMapper,
+                            CurrentUser currentUser) {
         this.orderRepository = orderRepository;
         this.categoryService = categoryService;
         this.userService = userService;
         this.modelMapper = modelMapper;
 
 
+        this.currentUser = currentUser;
     }
 
 
@@ -52,7 +55,7 @@ public class OrderServiceImpl implements OrderService {
         LocalDateTime localDateTime = LocalDateTime.parse(orderServiceModel.getOrderTime(), dtf);
 
         order.setOrderTime(localDateTime);
-        //
+        order.setEmployee(userService.findById(currentUser.getId()));
 
         orderRepository.save(order);
     }
