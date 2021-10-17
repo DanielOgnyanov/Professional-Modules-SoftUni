@@ -6,6 +6,7 @@ public class OrderViewModel {
     private Long id;
     private String name;
     private String price;
+    private String employee;
 
 
     public OrderViewModel() {
@@ -33,5 +34,13 @@ public class OrderViewModel {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(String employee) {
+        this.employee = employee;
     }
 }
