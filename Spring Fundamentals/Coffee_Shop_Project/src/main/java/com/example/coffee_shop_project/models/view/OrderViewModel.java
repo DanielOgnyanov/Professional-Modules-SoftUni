@@ -1,12 +1,14 @@
 package com.example.coffee_shop_project.models.view;
 
+import com.example.coffee_shop_project.models.entities.User;
+
 public class OrderViewModel {
 
 
     private Long id;
     private String name;
     private String price;
-    private String employee;
+    private User employee;
 
 
     public OrderViewModel() {
@@ -36,11 +38,11 @@ public class OrderViewModel {
         this.price = price;
     }
 
-    public String getEmployee() {
+    public User getEmployee() {
         return employee;
     }
 
-    public void setEmployee(String employee) {
+    public void setEmployee(User employee) {
         this.employee = employee;
     }
 }

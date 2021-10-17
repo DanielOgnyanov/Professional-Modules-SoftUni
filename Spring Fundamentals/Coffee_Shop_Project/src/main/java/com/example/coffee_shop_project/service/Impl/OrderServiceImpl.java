@@ -4,6 +4,7 @@ import com.example.coffee_shop_project.models.entities.EnumCategory;
 import com.example.coffee_shop_project.models.entities.Order;
 import com.example.coffee_shop_project.models.service.OrderServiceModel;
 import com.example.coffee_shop_project.models.view.OrderViewModel;
+import com.example.coffee_shop_project.models.view.UserViewModel;
 import com.example.coffee_shop_project.repository.OrderRepository;
 import com.example.coffee_shop_project.security.CurrentUser;
 import com.example.coffee_shop_project.service.CategoryService;
@@ -77,13 +78,7 @@ public class OrderServiceImpl implements OrderService {
         orderRepository.deleteById(id);
     }
 
-    @Override
-    public List<OrderViewModel> findAllOrders() {
-        return orderRepository.findEmployeeOrderCount()
-                .stream()
-                .map(order -> modelMapper.map(order, OrderViewModel.class))
-                .collect(Collectors.toList());
-    }
+
 
 
 }

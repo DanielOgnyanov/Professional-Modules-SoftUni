@@ -22,7 +22,5 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
     List<Order> findAllByCategory_Name(EnumCategory enumCategory);
 
-    @Query("Select o.employee.username, COUNT(o.employee.id) from Order as o " +
-            "Order by COUNT(o.employee.id) Desc")
-    List<Order> findEmployeeOrderCount();
+
 }

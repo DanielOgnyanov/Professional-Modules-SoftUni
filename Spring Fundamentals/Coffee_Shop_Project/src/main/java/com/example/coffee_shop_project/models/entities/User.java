@@ -1,9 +1,6 @@
 package com.example.coffee_shop_project.models.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
 
@@ -16,6 +13,7 @@ public class User extends BaseEntity{
     private String lastName;
     private String password;
     private String email;
+    private Set<Order> orders;
 
 
 
@@ -68,4 +66,12 @@ public class User extends BaseEntity{
     }
 
 
+    @OneToMany(mappedBy = "employee", fetch = FetchType.EAGER)
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
+    }
 }
