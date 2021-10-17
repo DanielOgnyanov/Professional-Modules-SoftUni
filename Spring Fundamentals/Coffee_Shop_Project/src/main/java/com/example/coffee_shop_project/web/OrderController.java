@@ -2,6 +2,7 @@ package com.example.coffee_shop_project.web;
 
 import com.example.coffee_shop_project.models.biding.OrderBindingModel;
 import com.example.coffee_shop_project.models.service.OrderServiceModel;
+import com.example.coffee_shop_project.security.CurrentUser;
 import com.example.coffee_shop_project.service.OrderService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
@@ -22,10 +23,12 @@ public class OrderController {
 
     private final OrderService orderService;
     private final ModelMapper modelMapper;
+    private final CurrentUser currentUser;
 
-    public OrderController(OrderService orderService, ModelMapper modelMapper) {
+    public OrderController(OrderService orderService, ModelMapper modelMapper, CurrentUser currentUser) {
         this.orderService = orderService;
         this.modelMapper = modelMapper;
+        this.currentUser = currentUser;
     }
 
 
