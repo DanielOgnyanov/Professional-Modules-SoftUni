@@ -15,4 +15,6 @@ public interface OrderService {
     List<OrderViewModel> findAllByCatName(EnumCategory enumCategory);
 
     void getReady(Long id);
+
+    List<OrderViewModel> findAllOrders();
 }

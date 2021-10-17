@@ -77,5 +77,13 @@ public class OrderServiceImpl implements OrderService {
         orderRepository.deleteById(id);
     }
 
+    @Override
+    public List<OrderViewModel> findAllOrders() {
+        return orderRepository.findEmployeeOrderCount()
+                .stream()
+                .map(order -> modelMapper.map(order, OrderViewModel.class))
+                .collect(Collectors.toList());
+    }
+
 
 }

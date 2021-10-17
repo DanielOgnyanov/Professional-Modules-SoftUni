@@ -32,6 +32,8 @@ public class HomeController {
         model.addAttribute("cakes", orderService.findAllByCatName(EnumCategory.CAKE));
         model.addAttribute("coffee", orderService.findAllByCatName(EnumCategory.COFFEE));
         model.addAttribute("others", orderService.findAllByCatName(EnumCategory.OTHER));
+
+        model.addAttribute("employeeOrders", orderService.findAllOrders());
         return "home";
     }
 
