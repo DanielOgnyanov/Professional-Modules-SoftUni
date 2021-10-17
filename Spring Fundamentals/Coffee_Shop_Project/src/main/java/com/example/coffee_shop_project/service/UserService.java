@@ -12,4 +12,6 @@ public interface UserService {
 
 
     void login(UserServiceModel userServiceModel);
+
+    User findById(Long id);
 }
